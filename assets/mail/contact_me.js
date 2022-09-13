@@ -57,7 +57,7 @@ $(function () {
                         $("<strong>").text(
                             "Lo siento " +
                                 firstName +
-                                ", parece que mi servidor de correo no responde. Porfavor intentalo de nuevo!"
+                                ", El servidor que utilizo para hostear este sitio es gratuito, por lo tanto no puedo enviar email desde aqui. Podras encontrar mi correo en el pie de página!"
                         )
                     );
                     $("#success > .alert-danger").append("</div>");
