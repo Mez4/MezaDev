@@ -1,0 +1,323 @@
+@font-face {
+  font-family: "Allura";
+  src: url(../fuentes/Allura.ttf), url(../fuentes/Allura.eot), url(..fuentes/Allura.eot); }
+
+@font-face {
+  font-family: "helevetica";
+  src: url(../fuentes/Helvetica.ttf), url(../fuentes/Helvetica.eot), url(..fuentes/Helvetica.eot); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-family: helvetica;
+  color: #343F64;
+  overflow-x: hidden; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  display: block; }
+
+header {
+  width: 100%;
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  header .slogan_logo {
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    header .slogan_logo .slogan {
+      display: none; }
+    header .slogan_logo .logo {
+      margin: 10px auto; }
+  header #check {
+    display: none; }
+    header #check:checked ~ .icono-menu {
+      border: none; }
+      header #check:checked ~ .icono-menu::before, header #check:checked ~ .icono-menu::after {
+        background: #fff; }
+      header #check:checked ~ .icono-menu::before {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 50%; }
+      header #check:checked ~ .icono-menu::after {
+        -webkit-transform: rotate(45deg) translate(0, 50%);
+        -ms-transform: rotate(45deg) translate(0, 50%);
+        transform: rotate(45deg) translate(0, 50%);
+        top: 50%; }
+    header #check:checked ~ .menu_contenedor {
+      opacity: 1;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+  header .icono-menu {
+    width: 25px;
+    height: 15px;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    border-top: 2px solid #333;
+    transition: .3s;
+    z-index: 900; }
+    header .icono-menu::before, header .icono-menu::after {
+      transition: .3s;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background: #333;
+      position: absolute;
+      left: 0; }
+    header .icono-menu::before {
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%); }
+    header .icono-menu::after {
+      top: 100%; }
+  header .menu_contenedor {
+    transition: .2s;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: rgba(23, 41, 102, 0.9);
+    z-index: 800;
+    display: none;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    opacity: 0;
+    overflow: hidden; }
+    header .menu_contenedor .menu_principal {
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 2.5;
+      width: 75%; }
+      header .menu_contenedor .menu_principal li {
+        width: 100%;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #fff; }
+        header .menu_contenedor .menu_principal li a {
+          color: #fff;
+          display: block; }
+  header .banner {
+    width: 100%;
+    height: 150px;
+    background-image: url("../img/fachada.jpg");
+    background-size: 100% 100%; }
+  @media (min-width: 720px) {
+    header {
+      background: #172966;
+      color: #fff; }
+      header .slogan_logo {
+        width: 30%;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        height: 70px;
+        position: relative; }
+        header .slogan_logo .slogan {
+          font-size: 1.8em;
+          display: block;
+          font-family: Allura;
+          margin-left: 10px; }
+        header .slogan_logo .logo {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: #fff;
+          padding: 4px;
+          margin: 0;
+          z-index: 700; }
+      header .icono-menu {
+        display: none; }
+      header .menu_contenedor {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        opacity: 1;
+        position: relative;
+        height: 70px;
+        width: 65%;
+        z-index: 0; }
+        header .menu_contenedor .menu_principal {
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          width: 100%; }
+          header .menu_contenedor .menu_principal li {
+            width: auto;
+            margin: 0 15px;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: space-around;
+            -ms-flex-pack: distribute;
+            justify-content: space-around;
+            font-size: 12.5px;
+            border-bottom: none; }
+            header .menu_contenedor .menu_principal li a {
+              transition: .3s; }
+              header .menu_contenedor .menu_principal li a:hover {
+                color: #999999; }
+      header .banner {
+        top: 100%;
+        height: 90vh;
+        background-attachment: fixed;
+        background-position: top;
+        background-size: 115%; } }
+
+.contenido {
+  width: 90%;
+  margin: 10px auto;
+  font-size: .9em;
+  text-align: justify; }
+  .contenido .parrafo {
+    line-height: 1.5;
+    margin: 20px 0; }
+  .contenido .titulo {
+    text-align: center; }
+  .contenido .director {
+    width: 100%;
+    margin-bottom: 10px; }
+  .contenido .mision_vision_titulo {
+    text-align: center;
+    border-bottom: 1px solid #6B1D42;
+    padding: 5px 0; }
+  .contenido .slider {
+    background: teal;
+    width: 100%;
+    height: 150px;
+    margin: 15px 0; }
+  @media (min-width: 720px) {
+    .contenido {
+      width: 52%;
+      margin: 30px auto; }
+      .contenido .director {
+        width: 85%;
+        margin: 7.5%; }
+      .contenido .mision_vision {
+        width: 85%;
+        margin: auto; }
+        .contenido .mision_vision .mision_vision_titulo {
+          padding: 25px 0;
+          font-size: 1.6em;
+          width: 40%;
+          margin: 25px auto; }
+        .contenido .mision_vision .parrafo {
+          font-size: 1.1em; } }
+
+.pie {
+  background: #343F64;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap column-reverse;
+  -ms-flex-flow: wrap column-reverse;
+  flex-flow: wrap column-reverse;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%; }
+  .pie .seccion_footer {
+    width: 90%;
+    text-align: center;
+    position: relative;
+    padding: 20px 0; }
+    .pie .seccion_footer::before {
+      content: "";
+      height: 1px;
+      background: #fff;
+      top: 100%;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      width: 10%;
+      position: absolute; }
+    .pie .seccion_footer .redes {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .pie .seccion_footer .redes li {
+        margin: 3px 5px; }
+        .pie .seccion_footer .redes li a {
+          color: #fff;
+          display: block; }
+    .pie .seccion_footer h4 {
+      color: #fff;
+      margin: 20px 0; }
+    .pie .seccion_footer p {
+      font-size: .8em;
+      color: rgba(255, 255, 255, 0.5);
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      line-height: 1.5; }
+      .pie .seccion_footer p span {
+        width: 100%; }
+    .pie .seccion_footer .gunnar span {
+      text-decoration: underline; }
+  @media (min-width: 720px) {
+    .pie {
+      -webkit-flex-flow: nowrap row;
+      -ms-flex-flow: nowrap row;
+      flex-flow: nowrap row; }
+      .pie .seccion_footer {
+        width: 25%;
+        margin-bottom: 145px; }
+        .pie .seccion_footer::before {
+          height: 0; }
+        .pie .seccion_footer:nth-child(2n)::before, .pie .seccion_footer:nth-child(2n)::after {
+          height: 30px;
+          width: 1px;
+          top: 50%;
+          left: 0;
+          -webkit-transform: translate(50%, 0);
+          -ms-transform: translate(50%, 0);
+          transform: translate(50%, 0); }
+        .pie .seccion_footer:nth-child(2n)::after {
+          content: "";
+          position: absolute;
+          left: 100%;
+          background: #fff; }
+        .pie .seccion_footer .redes {
+          margin: 20px 0; } }
